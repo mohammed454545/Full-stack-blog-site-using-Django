@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<!--logo-->
+<div  class="text-center">
+    <img id="logo" src="{% static 'img/logo2.png' %}"  class="rounded" alt="...">
+  </div>
+  <!--logo-->
+  <h1 style="color: red;" class="text-center">انشاء حساب</h1>
+  <hr>
+  {% include 'partials/_alerts.html'%}
+  {% if is_added == True%}
+  <form method="post" style="display: none;" >
+  {% else %}
+  <form method="post" >
+  {% endif%}
+  
+    {% csrf_token %}
+   
+  <div style="width: 75%; margin: auto; padding-bottom: 20%; padding-top: 5%;" class="text-center">
+    <div class="mb-3">
+      <label for="input user name" class="form-label" style="color: #000;">الاسم الكامل</label>
+      <input type="full_name" class="form-control" name="name" value="{{name}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="input user name" class="form-label" style="color: #000;">اسم المستخدم</label>
+      <input type="name" class="form-control" name="name" value="{{name}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="age"  class="form-label" style="color: #000;">العمر</label>
+      <input name="age" value="{{age}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="job"  class="form-label" style="color: #000;">العمل</label>
+      <input  name="job" class="form-control" id="exampleInputEmail1" value="{{job}}" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1"  class="form-label" style="color: #000;">البريد الالكتروني</label>
+      <input  class="form-control" name="email" value="{{email}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="password"  class="form-label"style="color: #000;">كلمة المرور</label>
+      <input type="password" name="password" value="{{password}}" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="reinput password"  class="form-label"style="color: #000;">تأكيد كلمة المرور</label>
+      <input type="password" value="{{repass}}" name="repass" class="form-control" id="exampleInputPassword1">
+    </div>
+    <form  >
+      <div class="form-group" style="align-content: center;">
+        <label for="exampleFormControlFile1">صورة 500x500</label>
+        <input type="file" name="pro_img" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+    </form>
+    <button type="submit" name="btnlogup" class="btn btn-outline-dark my-2 my-sm-0">انشاء حساب</button>
+    <div class="mb-3 form-check" style="padding-top: 3%;">
+      <p style="color: red;">تمتلك حساب بالفعل
+        <a href="{%url 'sign_in'%}" style="color: #000;">تسجيل الدخول</a>
+      </p>
+    </div >
+  </div>
+</form>
+{% endblock %}

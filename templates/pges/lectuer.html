@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="container-fluid"> 
+    <div class="text-center" style="padding-bottom: 70px;">
+        <div style="padding-bottom: 50px;"> 
+       <a href="https://youtu.be/u6vqFf5CgDs" target="_blanck"><img src="{{lec.photo.url}} " class="lectuericon"></a> 
+    </div>
+    <div>
+      <a href="https://youtu.be/u6vqFf5CgDs"target="_blanck"> <h1 class="text-center" style="color: red;">{{lec.title}}</h1></a>
+    <br>
+    <div style="width: 70%;"class="container-fluid"">
+    {{lec.bdy  | safe}}
+    </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a type="button"   class="btn btn-outline-danger" target="_blanck" href="https://drive.google.com/file/d/1-Dhv5ORlwgs74kEvMAQEvarGZznz2qx0/view?usp=sharing">تحميل ملخص المحاضرة</a>
+          </div>
+    </div>
+{% endblock %}

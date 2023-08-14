@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<!--new courses-->
+<h1 style="color: rgb(197, 3, 3); padding-top: 70px;" class="text-center">جميع الدورات</h1>
+<div class="container-fluid"> 
+  <div class="row justify-content-center">
+   <!--1-->
+   {% for cors in corses %}
+  <div class="card text-light col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 18rem;background-color: #cbcbcb; margin: 10px;">
+    <a href="{% url 'corse' cor_id=cors.title %} "><img id="ti1" src="{{cors.photo.url}}" class="card-img-top" alt={{cors.title}}></a>
+    <div class="card-body">
+      <a href="{% url 'corse' cor_id=cors.title %}"><h5 class="card-title" style="color:rgb(197, 3, 3) ;">{{cors.title}}</h5></a>
+      <p class="card-text text-truncate" style="color: #000;">{{cors.discribtion}}</p>
+    </div>
+  </div>
+  {% endfor %}
+   <!--1-->
+<!--new courses-->
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+ <!--logo-->
+ <div  class="text-center">
+    <img id="logo" src="{% static 'img/logo2.png' %}  " class="rounded" alt="...">
+  </div>
+  <!--logo-->
+  <h1 style="color: red;" class="text-center">الملف الشخصي</h1>
+  <div style="margin: auto;">
+  <!--4-->
+  <div class="card mb-3" style="max-width: 50;height:200 ; background-color: #cbcbcb; margin-bottom: auto;">
+      <div class="row no-gutters">
+        {% if request.user.is_authenticated%}
+        <div class="col-md-4">
+          <img id="pro" src="{{img.url}} " class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 style="color: rgb(197, 3, 3);" class="card-title">{{full_name}}</h3>
+            <h3 style="color: rgb(0, 0, 0);" class="card-title">{{name}}</h3>
+            <h4 style="color: #000;" class="card-text">{{email}}</h4>
+            <h4 style="color: #000;" class="card-text">{{age}} سنة</h4>
+            <h4 style="color: #000;" class="card-text">{{job}}</h4>
+          </div>
+          
+        {%else%}
+          <h2>
+            يرجى تسجيل الدخول لعرض الملف الشخصي
+            <a href="{% url 'sign_in'%}">
+              تسجيل الدخول
+            </a>
+          </h2>
+          {%endif%}
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+    <!--4-->
+{% endblock %}

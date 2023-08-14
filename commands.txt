@@ -1,0 +1,13 @@
+python -m venv ./venv
+.\venv\scripts\activate
+pip install django  
+django-admin startproject PHOENIX .
+python manage.py runserver
+python manage.py startapp
+python manage.py migrate
+python manage.py makemigrations
+python manage.py createsuperuser
+user name = mohammed
+email=mohammed@ph.com
+psw=20004554
+mohammed23

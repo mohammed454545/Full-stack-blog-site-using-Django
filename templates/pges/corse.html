@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+{% include 'partials/_alerts.html'%}
+<h1 style="color: rgb(197, 3, 3); margin: 70px; ;" class="text-center">دورة بايثون المستوى لاول</h1>
+
+<!--1-->
+{% for lectuer in lectuers %}
+<div class="card mb-3" style="max-width: 80%;height:20% ; background-color:#cbcbcb; margin-bottom: 10px; margin-top: 10px;margin: auto;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <a href="{%url 'lectuer' lec_id=lectuer.id%}"><img id="ci1" src="{{lectuer.photo.url}} " class="card-img" alt={{lectuer.title}}></a>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <a href="{%url 'lectuer' lec_id=lectuer.id%}"><h5 style="color: rgb(197, 3, 3);" class="card-title">{{lectuer.title}}</h5></a>
+          <p style="color:  #000;" class="card-text text-truncate " >{{lectuer.des}}</p>
+          <p  class="card-text"><small style="color:  #000;">{{lectuer.date}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  <!--1-->
+ 
+{% endblock %}

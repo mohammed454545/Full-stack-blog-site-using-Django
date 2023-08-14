@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap');
+body
+{
+background-color: #dcdcdc;
+font-family: 'Amiri', serif;
+-webkit-user-select: none;
+-webkit-touch-callout: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.navbar{
+    background-color: #02b5c2 !important;
+    margin: 5px;
+}
+.navbar:hover{
+    background-color: #01d3e2 !important;
+    margin: 10px;
+    border-radius: 20px;
+}
+.navbar a {
+    color: #8a0303 !important;
+}
+.navbar-brand,.navbar li{
+    transition: 0.3s;
+}
+
+#a1:hover,#a2:hover,
+#a3:hover,#a4:hover,
+#a5:hover,#a6:hover,
+#a7:hover,#a8:hover,
+#a9:hover,#a10:hover,
+#a11:hover,#a12:hover,
+#a13:hover,#a14:hover,
+#a15:hover{
+    transition: 0.3s;
+    text-shadow: 10px 10px 20px #ffffff,
+                 -10px -10px 20px #fff;
+    padding-right: 10px;
+    color: #ff0000 !important;
+    font-size: 20px !important;
+}
+.navbar-brand:hover{
+    text-shadow: 10px 10px 20px #fc4e4e,
+                 -10px -10px 20px #fc4e4e;
+    color: #ff0000 !important;
+    font-size: 30px !important;
+}
+#logo{
+    width: 20%;
+    height: 20%;
+    transition: 0.2s;
+    margin: 10px;
+    margin-top: 50px;
+}
+#logo:hover {
+    width: 30%;
+    height: 30%;
+    transform: rotate(360deg);
+}
+#i1:hover,#i2:hover,#i3:hover,#i4:hover
+{
+    width: 100%0;
+    height:100% ;
+ border-radius: 40%;
+ border: 1px solid red;
+
+}
+#ci1:hover,#ci2:hover,#ci3:hover,#ci4:hover
+{
+    border: solid 1px red;
+    border-radius: 300px;
+}
+#ti1:hover,#ti2:hover,#ti3:hover,#ti4:hover
+{
+    border: solid 1px red;
+    border-radius: 300px;
+}
+.myicon{
+    height: 40px;
+    width: 40px;
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+.myicon:hover{
+    height: 60px;
+    width: 60px;
+    border: 2px solid #f00;
+    border-radius: 30px;
+}
+#q1,#q2
+{
+color: rgb(1, 1, 61);
+text-shadow: 1px 1px 2px rgb(25, 25, 250),
+                 -1px -1px 2px rgb(25, 25, 250);
+font-size: 40px;
+}
+#q3
+{
+color: rgb(1, 1, 61);
+text-shadow: 1px 1px 2px rgb(25, 25, 250),
+                 -1px -1px 2px rgb(25, 25, 250);
+font-size: 20px;
+}
+#q1:hover,#q2:hover
+{
+color: rgb(0, 191, 191);
+text-shadow: 1px 1px 2px rgb(255, 0, 0),
+                 -1px -1px 2px rgb(255, 0, 0);
+font-size: 50px;
+}
+#q3:hover
+{
+color: rgb(0, 191, 191);
+text-shadow: 1px 1px 2px rgb(255, 0, 0),
+                 -1px -1px 2px rgb(255, 0, 0);
+font-size: 30px;
+}
+footer{
+    margin: 5%;
+    padding: 5%;
+    padding-bottom: 3%;
+    margin-bottom: -15%;
+    background-color:#02b5c2  ;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+
+}
+footer:hover{
+    margin: 5%;
+    padding: 5%;
+    padding-bottom: 3%;
+    margin-bottom: -15%;
+    background-color:#01d3e2;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    border: solid red 3px;
+
+}
+.lectuericon
+{
+    height: 30%;
+    width: 60%;
+    margin: 70px;
+}
+.lectuericon:hover
+{
+    height: 40%;
+    width: 70%;
+    border: 2px red solid;
+    border-radius: 200px;
+    margin: 80px;
+}
+#p1,#p3{
+    text-align: right;
+    padding: 70px;
+    text-align: justify;
+    font-size: 30px;
+}
+#p2{
+    text-align-last: center;
+    padding: 70px;
+    text-align: justify;
+    font-size: 30px;
+}
+#pro
+{
+    height: 200px;
+    width: 200px;
+}
+#pro:hover
+{
+    height: 230px;
+    width: 230px;
+    border: 3px red solid;
+    border-radius: 500px;
+}

@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+ <!--logo-->
+ <div  class="text-center">
+    <img id="logo" src="{% static 'img/logo2.png' %}  " class="rounded" alt="...">
+  </div>
+  <!--logo-->
+  <h1 style="color: red;" class="text-center">تسجيل الدخول</h1>
+  {% if request.user.is_authenticated%}
+  <h4 class="alert alert-secondary" style="width: 75%; margin: auto; padding-bottom: 1%; padding-top: 1%;">
+    {{request.user.username}},هلا بك في موقع phoenix
+  </h4>
+  {%else%}
+  <form method="post" >
+    {% csrf_token %}
+    {% include 'partials/_alerts.html'%}
+  <div style="width: 75%; margin: auto; padding-bottom: 20%; padding-top: 5%;" class="text-center">
+    <div class="mb-3">
+      <label for="exampleInputEmail1"  class="form-label" style="color: #000;">البريد الالكتروني</label>
+      <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1"  class="form-label"style="color: #000;">كلمة المرور</label>
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" name="btnlogin" class="btn btn-outline-dark my-2 my-sm-0">تسجيل الدخول</button>
+    <div class="mb-3 form-check" style="padding-top: 3%;">
+      <p style="color: red;">لا تمتلك حساب
+        <a href="sign up.html" style="color: #000;">انشاء حساب</a>
+      </p>
+      
+      </div>
+    </div >
+  </form>
+  {%endif%}
+  
+{% endblock %}

@@ -1,0 +1,63 @@
+ <!--navbar-->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'index' %}">PHOENIX</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a id="a1" class="nav-link" href="{% url 'index' %}">الرئيسية<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a id="a2" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            الدورات
+          </a>
+          <div class="dropdown-menu" style="background-color: #02b5c2;" aria-labelledby="navbarDropdown">
+            <a id="a3"class="dropdown-item" href="{% url 'corse' cor_id=1 %}">بايثون</a>
+            <a id="a4" class="dropdown-item" href="{% url 'corse' cor_id=2 %}">دارت</a>
+            <a id="a5"class="dropdown-item" href="{% url 'corse' cor_id=1 %}">سي شارب</a>
+            <a id="a6"class="dropdown-item" href="{% url 'corse' cor_id=1 %}">سي بلص بلص</a>
+            <div class="dropdown-divider"></div>
+            <a id="a7"class="dropdown-item" href="{% url 'allcorses' %}">عرض الكل</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a id="a8"class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              المجتمع
+            </a>
+            <div class="dropdown-menu"  style="background-color: #02b5c2;" aria-labelledby="navbarDropdown">
+              <a id="a9" target="_blank" class="dropdown-item" href="https://www.youtube.com/channel/UCNlwRWdjV69wDU6l6WMa-mA">يوتيوب</a>
+              <a id="a10" target="_blank" class="dropdown-item" href="https://www.facebook.com/Phoenix45-103790855138789">فيسبوك</a>
+              <a id="a11" target="_blank" class="dropdown-item" href="https://t.me/phoenixar45">تلكرام</a>
+              <a id="a12" target="_blank"class="dropdown-item" href="https://www.instagram.com/mohammed_alkarblay45?r=nametag">انستكرام</a>
+            </div>
+          </li>
+        <li class="nav-item active">
+            <a id="a13"class="nav-link" href="{% url 'about' %}">من نحن<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a id="a15"class="nav-link" href="{% url 'privacy' %}">سياسة الخصوصية<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a id="a15"class="nav-link" href="{% url 'profile' %}">الملف الشخصي<span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+      <form action="{% url 'allcorses' %}" class="form-inline my-2 my-lg-0">
+        <input name="searchname" class="form-control mr-sm-2" type="search" placeholder="بحث" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">بحث</button>
+        
+      </form>
+      <a
+        {% if request.user.is_authenticated%}
+         href="{% url 'logout'%}"><button type="button"style='margin-right: 6px;' class="btn btn-outline-danger">
+        تسجيل الخروج
+        {%else%}
+         href="{% url 'sign_up'%}"><button type="button"style='margin-right: 6px;' class="btn btn-outline-warning">
+        تسجيل الدخول
+        {%endif%}
+      </button></a>
+    </div>
+  </nav>
+<!--navbar-->

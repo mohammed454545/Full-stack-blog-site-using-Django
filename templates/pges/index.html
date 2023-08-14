@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div  class="text-center">
+    <img id="logo" src="{% static 'img/logo2.png' %}  "class="rounded" alt="...">
+  </div>
+  <!--logo-->
+<!--carousel-->
+  <!--new lectuers-->
+  <h1 style="color: rgb(197, 3, 3);" class="text-center">احدث المحاضرات</h1>
+  {% for lectuer in lectuers|slice:':4' %}
+<div class="card mb-3" style="max-width: 80%;height:20% ; background-color:#cbcbcb; margin-bottom: 10px; margin-top: 10px;margin: auto;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <a href="{%url 'lectuer' lec_id=lectuer.id%}"><img id="ci1" src="{{lectuer.photo.url}} " class="card-img" alt={{lectuer.title}}></a>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <a href="{%url 'lectuer' lec_id=lectuer.id%}"><h5 style="color: rgb(197, 3, 3);" class="card-title">{{lectuer.title}}</h5></a>
+          <p style="color:  #000;" class="card-text text-truncate " >{{lectuer.des}}</p>
+          <p  class="card-text"><small style="color:  #000;">{{lectuer.date}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  <!--new lectuers-->
+  <!--new courses-->
+  <h1 style="color: rgb(197, 3, 3);" class="text-center">احدث الدورات</h1>
+  <div class="container-fluid"> 
+    <div class="row justify-content-center" style="background-color:#dcdcdc; ">
+      {% for cors in corses|slice:':6' %}
+      <div class="card text-light col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 18rem;background-color: #cbcbcb; margin: 10px;">
+        <a href="{% url 'corse' cor_id=cors.title %}"><img id="ti1" src="{{cors.photo.url}}" class="card-img-top" alt={{cors.title}}></a>
+        <div class="card-body">
+          <a href="{% url 'corse' cor_id=cors.title %}"><h5 class="card-title" style="color:rgb(197, 3, 3) ;">{{cors.title}}</h5></a>
+          <p class="card-text text-truncate" style="color: #000;">{{cors.discribtion}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  <!--new courses-->
+    {% endblock %}
